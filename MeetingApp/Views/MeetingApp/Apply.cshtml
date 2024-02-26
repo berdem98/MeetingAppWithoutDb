@@ -1,0 +1,30 @@
+﻿
+@model UserInfo
+
+<h1>Toplantı Katılım Formu</h1>
+<form class="form-control" action="/MeetingApp/Apply" method="post" novalidate>
+	
+	<div>
+		<label class="form-label" asp-for="Name">Ad Soyad</label>
+		<input class="form-control" type="Text" asp-for="Name" />
+	</div>
+	<div>
+		<label class="form-label" asp-for="Phone">Telefon</label>
+		<input class="form-control"  asp-for="Phone" />
+	</div>
+	<div>
+		<label class="form-label" asp-for="Email">Email</label>
+		<input class="form-control" asp-for="Email" />
+	</div>
+	<div>
+		<label class="form-label" asp-for="KatilimDurumu">Katılım Durumu</label>
+		<select class="form-select" asp-for="KatilimDurumu">
+			<option value="">Seçiniz</option>
+			<option value="true">Evet. Katılıyorum</option>
+			<option value="false">Hayır. Katılıyorum</option>
+		</select>
+	</div>
+	<div asp-validation-summary="All"></div>
+	<button class="btn btn-primary" type="submit">Kaydet</button>
+	
+</form>

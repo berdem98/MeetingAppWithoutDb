@@ -1,0 +1,23 @@
+﻿
+@model MeetingInfo
+
+
+@{
+	Layout = "_Layout2";
+}
+<main class="text-center">
+	<h1>
+		@ViewData["Selamlama"]
+	</h1>
+	<h2>Toplantı Katılım Durumunu Bildiriniz</h2>
+
+	<div class="card my-2">
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">@Model.Konum</li>
+			<li class="list-group-item">@Model.Tarih.ToString("dd/MM/yyyy HH:mm:ss")</li>
+			<li class="list-group-item">@Model.KatilimSayisi</li>
+
+		</ul>
+	</div>
+	<a class="btn btn-sm btn-outline-primary" asp-controller="MeetingApp" asp-action="Apply">Başvuru Yap</a>
+</main>

@@ -1,0 +1,17 @@
+﻿@model UserInfo
+
+<main class="text-center">
+
+	<h1>Başvuru Durumu</h1>
+	@if(Model.KatilimDurumu==true)
+	{
+		<p>Teşekkürler, @Model.Name toplantıya sizinle birlikte @ViewBag.UserCount kişi katılıyor</p>
+		<a class="btn btn-sm btn-outline-primary" href="/MeetingApp/List">Katılımcıları listele</a>
+	}
+	else
+	{
+		<p>@Model.Name, Katılmadığınız için üzgünüz. :(</p>
+		<a class="btn btn-sm btn-outline-primary" href="/MeetingApp/Apply">Başvuru Formu</a>
+	}
+
+</main>

@@ -1,0 +1,49 @@
+﻿@model List<UserInfo>
+
+
+<main class="text-center">
+	<h1>Toplantıya Katılım Listesi</h1>
+	@{
+		int i = 0;
+	}
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<td>Ad</td>
+				<td>Katılım Durum</td>
+				<td>Detay</td>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var user in Model)
+			{
+				if(user.Id>0)
+				{
+					var durum = user.KatilimDurumu == true ? "Evet" : "Hayır";
+					var className = user.KatilimDurumu == true ? "table-success" : "table-danger";
+					if (user.KatilimDurumu==true)
+					{
+						i++;
+					}
+					<tr class="@className">
+						<td>@user.Name</td>
+						<td>@durum</td>
+						<td>
+							<a class="btn btn-sm btn-primary" href="/MeetingApp/Detay/@user.Id">Detay</a>
+						</td>
+					</tr>
+
+				}
+			}
+
+
+		</tbody>
+
+	</table>
+
+	<div class="card">
+		<div class="card-body">
+			<span>Katılımcı Sayısı: @i</span>
+		</div>
+	</div>
+</main>
